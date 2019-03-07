@@ -27,23 +27,23 @@ usage: redis-slowlog.py [-h] [-H HOSTNAME] [-p PORT] [-n DB] [-P PASSWORD]
                         [-f] [-r] [-d | -t]
                         [LIMIT]
 
-Redis slowlog viewer
+Redis slowlog viewer with sorting by execution time and date
 
 positional arguments:
-  LIMIT                 Number of entries to display (default: None)
+  LIMIT                 display this many entries (default: None)
 
 optional arguments:
   -h, --help            show this help message and exit
   -H HOSTNAME, --host HOSTNAME
-                        Redis hostname (default: localhost)
-  -p PORT, --port PORT  Redis port (default: 6379)
-  -n DB, --db DB        Redis database number (default: 0)
+                        redis hostname (default: localhost)
+  -p PORT, --port PORT  redis port (default: 6379)
+  -n DB, --db DB        redis database number (default: 0)
   -P PASSWORD, --password PASSWORD
-                        Redis password (default: )
-  -f, --full            Do not trim command line (default: False)
-  -r, --reset           Clear slowlog (default: False)
-  -d                    Sort by entry date (default: time)
-  -t                    Sort by execution time (default: time)
+                        redis password (default: )
+  -f, --full            do not trim slowlog entry (default: False)
+  -r, --reset           clear slowlog (default: False)
+  -d, --sort-date       sort by entry date (default: time)
+  -t, --sort-time       sort by execution time (default: time)
 ```
 
 ## Sample output
