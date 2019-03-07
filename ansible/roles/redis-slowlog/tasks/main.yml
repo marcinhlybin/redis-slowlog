@@ -1,0 +1,25 @@
+---
+- name: Install apt packages
+  apt:
+    name: python3-redis
+    update_cache: true
+    cache_valid_time: 3600
+    state: present
+
+- name: Clone redis-slowlog repository
+  git:
+    dest: /usr/local/src/redis-slowlog
+    repo: git@github.com:ahes/redis-slowlog.git
+    version: master
+    accept_hostkey: true
+    force: true
+    umask: '0022'
+
+- name: Add /usr/local/bin/redis-slowlog symlink
+  file:
+    src: /usr/local/src/redis-slowlog/redis-slowlog.py
+    dest: /usr/local/bin/redis-slowlog
+    owner: root
+    group: root
+    mode: 0755
+    state: link
