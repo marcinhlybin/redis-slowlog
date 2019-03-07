@@ -11,6 +11,8 @@ apt install python3-redis
 pip install redis
 ```
 
+Alternatively, make use of ansible role `redis-slowlog` which can be found in `ansible/` directory.
+
 ## Usage
 
 * By default redis-slowlog will display entire slowlog ordered by execution time descending with output trimmed to terminal width.
